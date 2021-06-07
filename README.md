@@ -36,7 +36,7 @@ Or manually update `require` block of `composer.json` and run `composer update`.
 After you've installed the package via composer, you're done. There's no step two.
 
 This package will automatically register the `Helldar\LaravelJsonResponse\Middlewares\SetHeaderMiddleware` middleware in the `web` and `api` groups, if they
-exist. The middleware will add a header `Accept` that will effectively convert all responses to JSON format. This header will apply to all replies.
+exist. The middleware will add a header `Accept` that will effectively convert all responses to JSON format. This header will apply to all responses.
 
 
 [badge_build]:          https://img.shields.io/github/workflow/status/andrey-helldar/laravel-json-response/phpunit?style=flat-square
