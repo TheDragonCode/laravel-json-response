@@ -7,6 +7,11 @@ Automatically always return a response in JSON format
 [![Total Downloads][badge_downloads]][link_packagist]
 [![License][badge_license]][link_license]
 
+[![StyleCI Status][badge_styleci]][link_styleci]
+[![Github Workflow Status][badge_build]][link_build]
+[![Coverage Status][badge_coverage]][link_scrutinizer]
+[![Scrutinizer Code Quality][badge_quality]][link_scrutinizer]
+
 
 ## Installation
 
@@ -34,14 +39,28 @@ This package will automatically register the `Helldar\LaravelJsonResponse\Middle
 exist. The middleware will add a header `Accept` that will effectively convert all responses to JSON format. This header will apply to all replies.
 
 
+[badge_build]:          https://img.shields.io/github/workflow/status/andrey-helldar/laravel-json-response/phpunit?style=flat-square
+
+[badge_coverage]:       https://img.shields.io/scrutinizer/coverage/g/andrey-helldar/laravel-json-response.svg?style=flat-square
+
 [badge_downloads]:      https://img.shields.io/packagist/dt/andrey-helldar/laravel-json-response.svg?style=flat-square
 
 [badge_license]:        https://img.shields.io/packagist/l/andrey-helldar/laravel-json-response.svg?style=flat-square
 
+[badge_quality]:        https://img.shields.io/scrutinizer/g/andrey-helldar/laravel-json-response.svg?style=flat-square
+
 [badge_stable]:         https://img.shields.io/github/v/release/andrey-helldar/laravel-json-response?label=stable&style=flat-square
 
+[badge_styleci]:        https://styleci.io/repos/374687566/shield
+
 [badge_unstable]:       https://img.shields.io/badge/unstable-dev--main-orange?style=flat-square
+
+[link_build]:           https://github.com/andrey-helldar/laravel-json-response/actions
 
 [link_license]:         LICENSE
 
 [link_packagist]:       https://packagist.org/packages/andrey-helldar/laravel-json-response
+
+[link_scrutinizer]:     https://scrutinizer-ci.com/g/andrey-helldar/laravel-json-response/?branch=main
+
+[link_styleci]:         https://github.styleci.io/repos/374687566
