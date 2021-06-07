@@ -8,17 +8,25 @@ use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
 final class ServiceProvider extends BaseServiceProvider
 {
+    protected $groups = ['web', 'api'];
+
     public function boot(): void
     {
-        $this->prepend('web', SetHeaderMiddleware::class);
-        $this->prepend('api', SetHeaderMiddleware::class);
+        foreach ($this->groups as $group) {
+            $this->prepend($group, SetHeaderMiddleware::class);
+        }
     }
 
     protected function prepend(string $group, string $middleware): void
     {
-        if ($this->hasGroup($group)) {
+        if ($this->has($group, $middleware)) {
             $this->resolve()->prependMiddlewareToGroup($group, $middleware);
         }
+    }
+
+    protected function has(string $group, string $middleware): bool
+    {
+        return $this->hasGroup($group) && $this->doesntMiddleware($group, $middleware);
     }
 
     protected function hasGroup(string $group): bool
@@ -26,6 +34,15 @@ final class ServiceProvider extends BaseServiceProvider
         $groups = $this->getGroups();
 
         return isset($groups[$group]);
+    }
+
+    protected function doesntMiddleware(string $group, string $middleware): bool
+    {
+        $groups = $this->getGroups();
+
+        $group = $groups[$group];
+
+        return ! in_array($middleware, $group);
     }
 
     protected function getGroups(): array

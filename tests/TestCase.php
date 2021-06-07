@@ -3,6 +3,7 @@
 namespace Tests;
 
 use Helldar\LaravelJsonResponse\ServiceProvider;
+use Illuminate\Contracts\Http\Kernel;
 use Orchestra\Testbench\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase
@@ -26,5 +27,10 @@ abstract class TestCase extends BaseTestCase
         $app['router']->get('api', function () {
             return ['data' => 'Hello, JSON!'];
         })->middleware('api');
+    }
+
+    protected function getMiddlewareGroups(): array
+    {
+        return $this->app->make(Kernel::class)->getMiddlewareGroups();
     }
 }
