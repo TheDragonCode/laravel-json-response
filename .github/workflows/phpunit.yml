@@ -8,7 +8,8 @@ jobs:
         strategy:
             fail-fast: true
             matrix:
-                php: [ "7.2", "7.3", "7.4", "8.0" ]
+                php: [ "7.3", "7.4", "8.0" ]
+                laravel: [ "6.0", "7.0", "8.0" ]
 
         name: PHP ${{ matrix.php }}
 
@@ -23,11 +24,10 @@ jobs:
                     extensions: curl, mbstring, zip, pcntl, pdo, pdo_sqlite, iconv, bcmath
                     coverage: none
 
-            -   name: Composer self update
-                run: composer self-update
-
             -   name: Install dependencies
-                run: composer update --prefer-stable --prefer-dist --no-progress --no-interaction
+                run: |
+                    composer require laravel/framework:^${{ matrix.laravel }}
+                    composer update --prefer-stable --prefer-dist --no-progress --no-interaction
 
             -   name: Execute tests
                 run: sudo vendor/bin/phpunit
