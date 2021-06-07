@@ -11,7 +11,7 @@ jobs:
                 php: [ "7.3", "7.4", "8.0" ]
                 laravel: [ "6.0", "7.0", "8.0" ]
 
-        name: PHP ${{ matrix.php }}
+        name: Laravel ${{ matrix.laravel }}, PHP ${{ matrix.php }}
 
         steps:
             -   name: Checkout code
