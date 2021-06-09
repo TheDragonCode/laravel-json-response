@@ -38,6 +38,12 @@ After you've installed the package via composer, you're done. There's no step tw
 This package will automatically register the `Helldar\LaravelJsonResponse\Middlewares\SetHeaderMiddleware` middleware in the `web` and `api` groups, if they
 exist. The middleware will add a header `Accept` that will effectively convert all responses to JSON format. This header will apply to all responses.
 
+## For Enterprise
+
+Available as part of the Tidelift Subscription.
+
+The maintainers of `andrey-helldar/laravel-json-response` and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source packages you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact packages you use. [Learn more.](https://tidelift.com/subscription/pkg/packagist-andrey-helldar-laravel-json-response?utm_source=packagist-andrey-helldar-laravel-json-response&utm_medium=referral&utm_campaign=enterprise&utm_term=repo)
+
 
 [badge_build]:          https://img.shields.io/github/workflow/status/andrey-helldar/laravel-json-response/phpunit?style=flat-square
 
