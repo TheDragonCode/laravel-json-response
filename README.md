@@ -2,6 +2,8 @@
 
 Automatically always return a response in JSON format
 
+<img src="https://preview.dragon-code.pro/TheDragonCode/laravel-json-response.svg?brand=laravel" alt="Laravel Json Response"/>
+
 [![Stable Version][badge_stable]][link_packagist]
 [![Unstable Version][badge_unstable]][link_packagist]
 [![Total Downloads][badge_downloads]][link_packagist]
