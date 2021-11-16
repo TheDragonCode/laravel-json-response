@@ -41,17 +41,17 @@ This package will automatically register the `DragonCode\LaravelJsonResponse\Mid
 exist. The middleware will add a header `Accept` that will effectively convert all responses to JSON format. This header will apply to all responses.
 
 
-[badge_build]:          https://img.shields.io/github/workflow/status/dragon-code/laravel-json-response/phpunit?style=flat-square
+[badge_build]:          https://img.shields.io/github/workflow/status/TheDragonCode/laravel-json-response/phpunit?style=flat-square
 
 [badge_downloads]:      https://img.shields.io/packagist/dt/dragon-code/laravel-json-response.svg?style=flat-square
 
 [badge_license]:        https://img.shields.io/packagist/l/dragon-code/laravel-json-response.svg?style=flat-square
 
-[badge_stable]:         https://img.shields.io/github/v/release/dragon-code/laravel-json-response?label=stable&style=flat-square
+[badge_stable]:         https://img.shields.io/github/v/release/TheDragonCode/laravel-json-response?label=stable&style=flat-square
 
 [badge_unstable]:       https://img.shields.io/badge/unstable-dev--main-orange?style=flat-square
 
-[link_build]:           https://github.com/dragon-code/laravel-json-response/actions
+[link_build]:           https://github.com/TheDragonCode/laravel-json-response/actions
 
 [link_license]:         LICENSE
 
