@@ -1,11 +1,11 @@
 <?php
 
-namespace Helldar\LaravelJsonResponse\Middlewares;
+namespace DragonCode\LaravelJsonResponse\Middlewares;
 
 use Closure;
 use Illuminate\Http\Request;
 
-final class SetHeaderMiddleware
+class SetHeaderMiddleware
 {
     public function handle(Request $request, Closure $next)
     {

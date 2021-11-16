@@ -1,12 +1,12 @@
 <?php
 
-namespace Helldar\LaravelJsonResponse;
+namespace DragonCode\LaravelJsonResponse;
 
-use Helldar\LaravelJsonResponse\Middlewares\SetHeaderMiddleware;
+use DragonCode\LaravelJsonResponse\Middlewares\SetHeaderMiddleware;
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
-final class ServiceProvider extends BaseServiceProvider
+class ServiceProvider extends BaseServiceProvider
 {
     protected $groups = ['web', 'api'];
 

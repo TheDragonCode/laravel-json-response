@@ -1,5 +1,5 @@
 {
-    "name": "andrey-helldar/laravel-json-response",
+    "name": "dragon-code/laravel-json-response",
     "description": "Automatically always return a response in JSON format",
     "type": "library",
     "license": "MIT",
@@ -7,7 +7,10 @@
         "api",
         "json",
         "laravel",
-        "response"
+        "response",
+        "dragon-code",
+        "dragon",
+        "andrey-helldar"
     ],
     "authors": [
         {
@@ -16,8 +19,8 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/andrey-helldar/laravel-json-response/issues",
-        "source": "https://github.com/andrey-helldar/laravel-json-response"
+        "issues": "https://github.com/TheDragonCode/laravel-json-response/issues",
+        "source": "https://github.com/TheDragonCode/laravel-json-response"
     },
     "require": {
         "php": "^7.3|^8.0",
@@ -29,9 +32,12 @@
         "orchestra/testbench": "^4.0|^5.0|^6.0",
         "phpunit/phpunit": "^9.0"
     },
+    "conflict": {
+        "andrey-helldar/laravel-json-response": "*"
+    },
     "autoload": {
         "psr-4": {
-            "Helldar\\LaravelJsonResponse\\": "src"
+            "DragonCode\\LaravelJsonResponse\\": "src"
         }
     },
     "autoload-dev": {
