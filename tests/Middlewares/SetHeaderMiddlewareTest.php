@@ -4,7 +4,7 @@ namespace Tests\Middlewares;
 
 use Tests\TestCase;
 
-final class SetHeaderMiddlewareTest extends TestCase
+class SetHeaderMiddlewareTest extends TestCase
 {
     public function testWeb(): void
     {

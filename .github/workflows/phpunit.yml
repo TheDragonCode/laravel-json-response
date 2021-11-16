@@ -3,7 +3,7 @@ on: [ push ]
 
 jobs:
     build:
-        runs-on: ubuntu-20.04
+        runs-on: ubuntu-latest
 
         strategy:
             fail-fast: true
@@ -26,7 +26,7 @@ jobs:
 
             -   name: Install dependencies
                 run: |
-                    composer require laravel/framework:^${{ matrix.laravel }}
+                    composer require --dev laravel/framework:^${{ matrix.laravel }}
                     composer update --prefer-stable --prefer-dist --no-progress --no-interaction
 
             -   name: Execute tests

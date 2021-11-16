@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use Helldar\LaravelJsonResponse\ServiceProvider;
+use DragonCode\LaravelJsonResponse\ServiceProvider;
 use Illuminate\Contracts\Http\Kernel;
 use Orchestra\Testbench\TestCase as BaseTestCase;
 

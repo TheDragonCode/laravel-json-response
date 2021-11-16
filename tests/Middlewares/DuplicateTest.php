@@ -2,10 +2,10 @@
 
 namespace Tests\Middlewares;
 
-use Helldar\LaravelJsonResponse\Middlewares\SetHeaderMiddleware;
+use DragonCode\LaravelJsonResponse\Middlewares\SetHeaderMiddleware;
 use Tests\TestCase;
 
-final class DuplicateTest extends TestCase
+class DuplicateTest extends TestCase
 {
     public function testCount()
     {
