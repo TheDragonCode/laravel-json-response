@@ -35,7 +35,7 @@
     "conflict": {
         "andrey-helldar/laravel-json-response": "*"
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
