@@ -1,8 +1,8 @@
 {
     "name": "dragon-code/laravel-json-response",
     "description": "Automatically always return a response in JSON format",
-    "type": "library",
     "license": "MIT",
+    "type": "library",
     "keywords": [
         "api",
         "json",
@@ -23,18 +23,20 @@
         "source": "https://github.com/TheDragonCode/laravel-json-response"
     },
     "require": {
-        "php": "^7.3|^8.0",
-        "illuminate/contracts": "^6.0|^7.0|^8.0",
-        "illuminate/http": "^6.0|^7.0|^8.0",
-        "illuminate/support": "^6.0|^7.0|^8.0"
+        "php": "^7.3 || ^8.0",
+        "illuminate/contracts": "^6.0 || ^7.0 || ^8.0 || ^9.0",
+        "illuminate/http": "^6.0 || ^7.0 || ^8.0 || ^9.0",
+        "illuminate/support": "^6.0 || ^7.0 || ^8.0 || ^9.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^4.0|^5.0|^6.0",
+        "orchestra/testbench": "^4.0 || ^5.0 || ^6.0 || ^7.0",
         "phpunit/phpunit": "^9.0"
     },
     "conflict": {
         "andrey-helldar/laravel-json-response": "*"
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "DragonCode\\LaravelJsonResponse\\": "src"
@@ -48,7 +50,5 @@
     "config": {
         "preferred-install": "dist",
         "sort-packages": true
-    },
-    "minimum-stability": "stable",
-    "prefer-stable": true
+    }
 }
