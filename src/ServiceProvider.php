@@ -4,6 +4,7 @@ namespace DragonCode\LaravelJsonResponse;
 
 use DragonCode\LaravelJsonResponse\Middlewares\SetHeaderMiddleware;
 use Illuminate\Contracts\Http\Kernel;
+use Illuminate\Support\Arr;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
 class ServiceProvider extends BaseServiceProvider
@@ -31,16 +32,12 @@ class ServiceProvider extends BaseServiceProvider
 
     protected function hasGroup(string $group): bool
     {
-        $groups = $this->getGroups();
-
-        return isset($groups[$group]);
+        return Arr::has($this->getGroups(), $group);
     }
 
     protected function doesntMiddleware(string $group, string $middleware): bool
     {
-        $groups = $this->getGroups();
-
-        $group = $groups[$group];
+        $group = Arr::get($this->getGroups(), $group);
 
         return ! in_array($middleware, $group);
     }
