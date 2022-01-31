@@ -4,6 +4,7 @@ namespace DragonCode\LaravelJsonResponse\Middlewares;
 
 use Closure;
 use Illuminate\Http\Request;
+use Lmc\HttpConstants\Header;
 
 class SetHeaderMiddleware
 {
@@ -12,6 +13,6 @@ class SetHeaderMiddleware
         /** @var \Illuminate\Http\Response $response */
         $response = $next($request);
 
-        return $response->header('Accept', 'application/json');
+        return $response->header(Header::ACCEPT, 'application/json');
     }
 }
