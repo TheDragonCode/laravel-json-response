@@ -2,6 +2,7 @@
 
 namespace Tests\Middlewares;
 
+use Lmc\HttpConstants\Header;
 use Tests\TestCase;
 
 class SetHeaderMiddlewareTest extends TestCase
@@ -11,7 +12,7 @@ class SetHeaderMiddlewareTest extends TestCase
         $this
             ->get('web')
             ->assertSuccessful()
-            ->assertHeader('Accept', 'application/json')
+            ->assertHeader(Header::ACCEPT, 'application/json')
             ->assertJsonStructure(['data'])
             ->assertJson(['data' => 'Hello, JSON!']);
     }
@@ -21,7 +22,7 @@ class SetHeaderMiddlewareTest extends TestCase
         $this
             ->get('api')
             ->assertSuccessful()
-            ->assertHeader('Accept', 'application/json')
+            ->assertHeader(Header::ACCEPT, 'application/json')
             ->assertJsonStructure(['data'])
             ->assertJson(['data' => 'Hello, JSON!']);
     }
