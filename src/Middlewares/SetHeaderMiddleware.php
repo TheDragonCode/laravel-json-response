@@ -10,8 +10,8 @@ use Lmc\HttpConstants\Header;
 class SetHeaderMiddleware
 {
     /**
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param \Illuminate\Http\Request $request
+     * @param Closure $next
      *
      * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\Response
      */
