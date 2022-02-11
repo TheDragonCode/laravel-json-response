@@ -13,7 +13,6 @@ class ServiceProvider extends BaseServiceProvider
     public function boot(): void
     {
         $this->resolve()->prependMiddleware($this->middleware);
-        $this->resolve()->prependToMiddlewarePriority($this->middleware);
     }
 
     protected function resolve(): Kernel

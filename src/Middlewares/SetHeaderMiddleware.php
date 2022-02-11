@@ -5,7 +5,6 @@ namespace DragonCode\LaravelJsonResponse\Middlewares;
 use Closure;
 use Illuminate\Http\Request;
 use Lmc\HttpConstants\Header;
-use Symfony\Component\HttpFoundation\JsonResponse;
 
 class SetHeaderMiddleware
 {
@@ -17,14 +16,20 @@ class SetHeaderMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        /** @var \Illuminate\Http\Response $response */
         $response = $next($request);
 
-        return $this->hasJson($response) ? $response : $response->header(Header::ACCEPT, 'application/json');
+        $this->set($response);
+
+        return $response;
     }
 
-    protected function hasJson($response): bool
+    /**
+     * @param \Illuminate\Http\JsonResponse|\Illuminate\Http\Response $response
+     *
+     * @return void
+     */
+    protected function set($response)
     {
-        return $response instanceof JsonResponse;
+        $response->headers->set(Header::ACCEPT, 'application/json');
     }
 }

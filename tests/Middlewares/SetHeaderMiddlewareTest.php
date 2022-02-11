@@ -14,7 +14,7 @@ class SetHeaderMiddlewareTest extends TestCase
             ->assertSuccessful()
             ->assertHeader(Header::ACCEPT, 'application/json')
             ->assertJsonStructure(['data'])
-            ->assertJson(['data' => 'Hello, JSON!']);
+            ->assertJson(['data' => 'Hello, Web!']);
     }
 
     public function testApi(): void
@@ -24,6 +24,16 @@ class SetHeaderMiddlewareTest extends TestCase
             ->assertSuccessful()
             ->assertHeader(Header::ACCEPT, 'application/json')
             ->assertJsonStructure(['data'])
-            ->assertJson(['data' => 'Hello, JSON!']);
+            ->assertJson(['data' => 'Hello, Api!']);
+    }
+
+    public function testCustom(): void
+    {
+        $this
+            ->get('custom')
+            ->assertSuccessful()
+            ->assertHeader(Header::ACCEPT, 'application/json')
+            ->assertJsonStructure(['data'])
+            ->assertJson(['data' => 'Hello, Custom!']);
     }
 }
