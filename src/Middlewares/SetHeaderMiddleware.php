@@ -16,9 +16,20 @@ class SetHeaderMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        /** @var \Illuminate\Http\Response $response */
         $response = $next($request);
 
-        return $response->header(Header::ACCEPT, 'application/json');
+        $this->set($response);
+
+        return $response;
+    }
+
+    /**
+     * @param \Illuminate\Http\JsonResponse|\Illuminate\Http\Response $response
+     *
+     * @return void
+     */
+    protected function set($response)
+    {
+        $response->headers->set(Header::ACCEPT, 'application/json');
     }
 }

@@ -40,6 +40,14 @@ After you've installed the package via composer, you're done. There's no step tw
 This package will automatically register the `DragonCode\LaravelJsonResponse\Middlewares\SetHeaderMiddleware` middleware in the `web` and `api` groups, if they
 exist. The middleware will add a header `Accept` that will effectively convert all responses to JSON format. This header will apply to all responses.
 
+## Troubleshooting
+
+> Why are my error messages not being converted to JSON?
+
+This is a feature of the [Laravel architecture](https://github.com/laravel/framework/blob/9.x/src/Illuminate/Foundation/Http/Kernel.php#L108-L116). The package makes corrections during the loading of the framework and it stores its state internally, and in case of an error, it takes the value of the request from the outside. Therefore, the error text is returned in html format.
+
+To fix this problem, you need to explicitly pass the `Accept: application/json` header in requests, or use the [`dragon-code/api-response`](https://github.com/TheDragonCode/api-response#best-practice-use-with-the-laravel-and-lumen-frameworks) package.
+
 
 [badge_build]:          https://img.shields.io/github/workflow/status/TheDragonCode/laravel-json-response/phpunit?style=flat-square
 

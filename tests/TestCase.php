@@ -3,7 +3,6 @@
 namespace Tests;
 
 use DragonCode\LaravelJsonResponse\ServiceProvider;
-use Illuminate\Contracts\Http\Kernel;
 use Orchestra\Testbench\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase
@@ -20,17 +19,19 @@ abstract class TestCase extends BaseTestCase
 
     protected function setRoutes($app): void
     {
-        $app['router']->get('web', function () {
-            return ['data' => 'Hello, JSON!'];
+        /** @var \Illuminate\Routing\RouteRegistrar $router */
+        $router = $app['router'];
+
+        $router->get('web', function () {
+            return ['data' => 'Hello, Web!'];
         })->middleware('web');
 
-        $app['router']->get('api', function () {
-            return ['data' => 'Hello, JSON!'];
+        $router->get('api', function () {
+            return ['data' => 'Hello, Api!'];
         })->middleware('api');
-    }
 
-    protected function getMiddlewareGroups(): array
-    {
-        return $this->app->make(Kernel::class)->getMiddlewareGroups();
+        $router->get('custom', function () {
+            return ['data' => 'Hello, Custom!'];
+        });
     }
 }
