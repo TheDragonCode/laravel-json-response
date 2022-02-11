@@ -3,7 +3,6 @@
 namespace DragonCode\LaravelJsonResponse\Middlewares;
 
 use Closure;
-use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Lmc\HttpConstants\Header;
 
@@ -15,7 +14,7 @@ class SetHeaderMiddleware
      *
      * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\Response
      */
-    public function handle(Request $request, Closure $next): JsonResponse
+    public function handle(Request $request, Closure $next)
     {
         /** @var \Illuminate\Http\Response $response */
         $response = $next($request);
