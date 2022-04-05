@@ -28,17 +28,11 @@ Or manually update `require` block of `composer.json` and run `composer update`.
 }
 ```
 
-### Upgrade from `andrey-helldar/laravel-json-response`
-
-1. Replace `"andrey-helldar/laravel-json-response": "^1.0"` with `"dragon-code/laravel-json-response": "^2.0"` in the `composer.json` file;
-4. Call the `composer update` console command.
-
 ## Using
 
 After you've installed the package via composer, you're done. There's no step two.
 
-This package will automatically register the `DragonCode\LaravelJsonResponse\Middlewares\SetHeaderMiddleware` middleware in the `web` and `api` groups, if they exist. The
-middleware will add a header `Accept` that will effectively convert all responses to JSON format. This header will apply to all responses.
+This package will automatically register the `DragonCode\LaravelJsonResponse\Middlewares\SetHeaderMiddleware` middleware in the `web` and `api` groups, if they exist. The middleware will add a header `Accept` that will effectively convert all responses to JSON format. This header will apply to all responses.
 
 
 [badge_build]:          https://img.shields.io/github/workflow/status/TheDragonCode/laravel-json-response/phpunit?style=flat-square
