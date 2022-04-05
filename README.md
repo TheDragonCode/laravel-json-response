@@ -15,7 +15,7 @@
 To get the latest version of `Laravel Json Response`, simply require the project using [Composer](https://getcomposer.org):
 
 ```bash
-$ composer require dragon-code/laravel-json-response
+composer require dragon-code/laravel-json-response
 ```
 
 Or manually update `require` block of `composer.json` and run `composer update`.
