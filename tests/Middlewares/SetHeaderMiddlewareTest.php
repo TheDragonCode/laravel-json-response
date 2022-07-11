@@ -36,4 +36,14 @@ class SetHeaderMiddlewareTest extends TestCase
             ->assertJsonStructure(['data'])
             ->assertJson(['data' => 'Hello, Custom!']);
     }
+
+    public function testAsterisk(): void
+    {
+        $this
+            ->get('custom')
+            ->assertSuccessful()
+            ->assertHeader(Header::ACCEPT, '*/*')
+            ->assertJsonStructure(['data'])
+            ->assertJson(['data' => 'Hello, Custom!']);
+    }
 }
