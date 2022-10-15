@@ -5,17 +5,9 @@ namespace Tests\Middlewares;
 use Lmc\HttpConstants\Header;
 use Tests\TestCase;
 
-class SetHeaderMiddlewareTest extends TestCase
+class ApiAndWebTest extends TestCase
 {
-    public function testWeb(): void
-    {
-        $this
-            ->get('web')
-            ->assertSuccessful()
-            ->assertHeader(Header::ACCEPT, 'application/json')
-            ->assertJsonStructure(['data'])
-            ->assertJson(['data' => 'Hello, Web!']);
-    }
+    protected $groups = ['api', 'web'];
 
     public function testApi(): void
     {
@@ -27,12 +19,22 @@ class SetHeaderMiddlewareTest extends TestCase
             ->assertJson(['data' => 'Hello, Api!']);
     }
 
+    public function testWeb(): void
+    {
+        $this
+            ->get('web')
+            ->assertSuccessful()
+            ->assertHeader(Header::ACCEPT, 'application/json')
+            ->assertJsonStructure(['data'])
+            ->assertJson(['data' => 'Hello, Web!']);
+    }
+
     public function testCustom(): void
     {
         $this
             ->get('custom')
             ->assertSuccessful()
-            ->assertHeader(Header::ACCEPT, 'application/json')
+            ->assertHeaderMissing(Header::ACCEPT)
             ->assertJsonStructure(['data'])
             ->assertJson(['data' => 'Hello, Custom!']);
     }
@@ -42,7 +44,7 @@ class SetHeaderMiddlewareTest extends TestCase
         $this
             ->get('custom', [Header::ACCEPT => 'application/xml'])
             ->assertSuccessful()
-            ->assertHeader(Header::ACCEPT, 'application/json')
+            ->assertHeaderMissing(Header::ACCEPT)
             ->assertJsonStructure(['data'])
             ->assertJson(['data' => 'Hello, Custom!']);
     }
@@ -52,7 +54,7 @@ class SetHeaderMiddlewareTest extends TestCase
         $this
             ->get('custom', [Header::ACCEPT => '*/*'])
             ->assertSuccessful()
-            ->assertHeader(Header::ACCEPT, 'application/json')
+            ->assertHeaderMissing(Header::ACCEPT)
             ->assertJsonStructure(['data'])
             ->assertJson(['data' => 'Hello, Custom!']);
     }
