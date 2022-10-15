@@ -3,10 +3,14 @@
 namespace Tests;
 
 use DragonCode\LaravelJsonResponse\ServiceProvider;
+use Illuminate\Contracts\Config\Repository;
+use Illuminate\Routing\Router;
 use Orchestra\Testbench\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase
 {
+    protected $groups;
+
     protected function getPackageProviders($app): array
     {
         return [ServiceProvider::class];
@@ -14,14 +18,12 @@ abstract class TestCase extends BaseTestCase
 
     protected function getEnvironmentSetUp($app)
     {
-        $this->setRoutes($app);
+        $this->setRoutes($app['router']);
+        $this->setConfig($app['config']);
     }
 
-    protected function setRoutes($app): void
+    protected function setRoutes(Router $router): void
     {
-        /** @var \Illuminate\Routing\RouteRegistrar $router */
-        $router = $app['router'];
-
         $router->get('web', function () {
             return ['data' => 'Hello, Web!'];
         })->middleware('web');
@@ -33,5 +35,10 @@ abstract class TestCase extends BaseTestCase
         $router->get('custom', function () {
             return ['data' => 'Hello, Custom!'];
         });
+    }
+
+    protected function setConfig(Repository $config): void
+    {
+        $config->set('http.response.json', $this->groups);
     }
 }
