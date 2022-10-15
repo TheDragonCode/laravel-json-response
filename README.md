@@ -23,7 +23,7 @@ Or manually update `require` block of `composer.json` and run `composer update`.
 ```json
 {
     "require": {
-        "dragon-code/laravel-json-response": "^1.0"
+        "dragon-code/laravel-json-response": "^2.0"
     }
 }
 ```
