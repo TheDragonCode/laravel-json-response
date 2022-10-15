@@ -9,7 +9,7 @@ use Orchestra\Testbench\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase
 {
-    protected $groups = null;
+    protected $groups;
 
     protected function getPackageProviders($app): array
     {
