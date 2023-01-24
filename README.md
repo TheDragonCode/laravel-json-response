@@ -38,7 +38,7 @@ middleware will add a header `Accept` that will effectively convert all response
 > If you need to redefine the header for specific groups of routes, you can do this by changing the [`settings`](config/http.php).
 
 
-[badge_build]:          https://img.shields.io/github/workflow/status/TheDragonCode/laravel-json-response/phpunit?style=flat-square
+[badge_build]:          https://img.shields.io/github/actions/workflow/status/TheDragonCode/laravel-json-response/phpunit.yml?style=flat-square
 
 [badge_downloads]:      https://img.shields.io/packagist/dt/dragon-code/laravel-json-response.svg?style=flat-square
 
