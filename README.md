@@ -1,6 +1,6 @@
-# Laravel Json Response
+# Json Response for Laravel
 
-<img src="https://preview.dragon-code.pro/TheDragonCode/json-response.svg?brand=laravel" alt="Laravel Json Response"/>
+<img src="https://preview.dragon-code.pro/TheDragonCode/json-response.svg?brand=laravel" alt="Json Response for Laravel"/>
 
 [![Stable Version][badge_stable]][link_packagist]
 [![Unstable Version][badge_unstable]][link_packagist]
