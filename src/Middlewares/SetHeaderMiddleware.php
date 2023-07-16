@@ -11,9 +11,6 @@ use Lmc\HttpConstants\Header;
 class SetHeaderMiddleware
 {
     /**
-     * @param \Illuminate\Http\Request $request
-     * @param Closure $next
-     *
      * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\Response
      */
     public function handle(Request $request, Closure $next)
@@ -26,7 +23,7 @@ class SetHeaderMiddleware
     }
 
     /**
-     * @param \Illuminate\Http\JsonResponse|\Illuminate\Http\Response $response
+     * @param  \Illuminate\Http\JsonResponse|\Illuminate\Http\Response  $response
      *
      * @return void
      */
