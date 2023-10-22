@@ -10,24 +10,14 @@ use Lmc\HttpConstants\Header;
 
 class SetHeaderMiddleware
 {
-    /**
-     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\Response
-     */
     public function handle(Request $request, Closure $next)
     {
-        $response = $next($request);
+        $this->set($request);
 
-        $this->set($response);
-
-        return $response;
+        return $next($request);
     }
 
-    /**
-     * @param  \Illuminate\Http\JsonResponse|\Illuminate\Http\Response  $response
-     *
-     * @return void
-     */
-    protected function set($response)
+    protected function set(Request $request)
     {
         $response->headers->set(Header::ACCEPT, 'application/json');
     }
