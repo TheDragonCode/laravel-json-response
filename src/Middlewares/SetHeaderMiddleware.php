@@ -12,15 +12,17 @@ class SetHeaderMiddleware
 {
     public function handle(Request $request, Closure $next)
     {
-        $this->set($request);
+        $response = $next($this->set($request));
 
-        return $next($request);
+        return $this->set($response);
     }
 
-    protected function set(Request $request)
+    protected function set($request)
     {
         if (! $request->hasHeader(Header::ACCEPT)) {
             $request->headers->set(Header::ACCEPT, 'application/json');
         }
+
+        return $request;
     }
 }
