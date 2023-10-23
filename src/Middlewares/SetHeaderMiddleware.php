@@ -12,7 +12,9 @@ class SetHeaderMiddleware
 {
     public function handle(Request $request, Closure $next)
     {
-        return $next($this->set($request));
+        return $this->set(
+            $next($this->set($request))
+        );
     }
 
     protected function set($request)
