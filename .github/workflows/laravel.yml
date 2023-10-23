@@ -58,11 +58,3 @@ jobs:
 
             -   name: Execute tests
                 run: sudo vendor/bin/phpunit
-
-            -   name: Upload logs
-                uses: actions/upload-artifact@v3
-                with:
-                    name: logs-{{ matrix.php}}-{{ matrix.laravel }}.log
-                    path: vendor/orchestra/testbench-core/laravel/storage/logs/laravel.log
-                    retention-days: 1
-    
