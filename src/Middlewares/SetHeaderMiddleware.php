@@ -19,7 +19,7 @@ class SetHeaderMiddleware
 
     protected function set(Request $request)
     {
-        if ($request->headers->missing(Header::ACCEPT)) {
+        if (! $request->hasHeader(Header::ACCEPT)) {
             $request->headers->set(Header::ACCEPT, 'application/json');
         }
     }
