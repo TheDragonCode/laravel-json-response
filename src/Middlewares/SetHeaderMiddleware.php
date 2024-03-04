@@ -19,7 +19,7 @@ class SetHeaderMiddleware
 
     protected function set($request)
     {
-        if (!$this->hasHeader($request) || $this->isAsterisk($request)) {
+        if (! $this->hasHeader($request) || $this->isAsterisk($request)) {
             $request->headers->set(Header::ACCEPT, 'application/json');
         }
 
