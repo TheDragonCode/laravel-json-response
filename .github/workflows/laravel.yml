@@ -30,6 +30,9 @@ jobs:
                     -   laravel: "7.0"
                         php: "8.3"
 
+                    -   laravel: "8.0"
+                        php: "8.3"
+
                     -   laravel: "9.0"
                         php: "7.3"
 
