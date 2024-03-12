@@ -12,6 +12,14 @@
 
 ## Installation
 
+### Compatibility
+
+| PHP                          | Laravel                  | Json Response |
+|------------------------------|--------------------------|---------------|
+| 7.3, 7.4, 8.0, 8.1, 8.2, 8.3 | 6.x, 7.x, 8.x, 9.x, 10.x | `^2.0`        |
+| 8.1, 8.2, 8.3                | 10.x, 11.x               | `^3.0`        |
+
+
 To get the latest version of `Laravel Json Response`, simply require the project using [Composer](https://getcomposer.org):
 
 ```bash
@@ -23,7 +31,7 @@ Or manually update `require` block of `composer.json` and run `composer update`.
 ```json
 {
     "require": {
-        "dragon-code/laravel-json-response": "^2.0"
+        "dragon-code/laravel-json-response": "^3.0"
     }
 }
 ```
