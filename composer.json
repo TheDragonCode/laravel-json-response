@@ -46,13 +46,13 @@
         "symfony/http-foundation": "^6.0 || ^7.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^10.0 || ^11.0",
-        "phpunit/phpunit": "^11.0"
+        "orchestra/testbench": "^9.0 || ^10.0",
+        "phpunit/phpunit": "^10.0"
     },
     "conflict": {
         "andrey-helldar/laravel-json-response": "*"
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
