@@ -16,7 +16,7 @@
 | PHP                               | Laravel                  | Json Response |
 |-----------------------------------|--------------------------|---------------|
 | 7.3, 7.4, 8.0, 8.1, 8.2, 8.3б 8.4 | 6.x, 7.x, 8.x, 9.x, 10.x | `^2.0`        |
-| 8.1, 8.2, 8.3                     | 10.x, 11.x               | `^3.0`        |
+| 8.1, 8.2, 8.3, 8.4                | 10.x, 11.x, 12.x         | `^3.0`        |
 
 
 To get the latest version of `Laravel Json Response`, simply require the project using [Composer](https://getcomposer.org):
