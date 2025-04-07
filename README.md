@@ -3,7 +3,6 @@
 <img src="https://preview.dragon-code.pro/TheDragonCode/json-response.svg?brand=laravel" alt="Json Response for Laravel"/>
 
 [![Stable Version][badge_stable]][link_packagist]
-[![Unstable Version][badge_unstable]][link_packagist]
 [![Total Downloads][badge_downloads]][link_packagist]
 [![Github Workflow Status][badge_build]][link_build]
 [![License][badge_license]][link_license]
@@ -46,15 +45,13 @@ middleware will add a header `Accept` that will effectively convert all response
 > If you need to redefine the header for specific groups of routes, you can do this by changing the [`settings`](config/http.php).
 
 
-[badge_build]:          https://img.shields.io/github/actions/workflow/status/TheDragonCode/laravel-json-response/laravel.yml?style=flat-square
+[badge_build]:          https://img.shields.io/github/actions/workflow/status/TheDragonCode/laravel-json-response/tests.yml?style=flat-square
 
 [badge_downloads]:      https://img.shields.io/packagist/dt/dragon-code/laravel-json-response.svg?style=flat-square
 
 [badge_license]:        https://img.shields.io/packagist/l/dragon-code/laravel-json-response.svg?style=flat-square
 
 [badge_stable]:         https://img.shields.io/github/v/release/TheDragonCode/laravel-json-response?label=stable&style=flat-square
-
-[badge_unstable]:       https://img.shields.io/badge/unstable-dev--main-orange?style=flat-square
 
 [link_build]:           https://github.com/TheDragonCode/laravel-json-response/actions
 
